@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${title}">Home | MyNotes</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-family: 'Inter', sans-serif;
+		}
+		body {
+			background-color: #f3f4f6;
+			min-height: 100vh;
+		}
+		.navbar {
+			background-color: #111827;
+			color: white;
+			padding: 16px 32px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.navbar .logo {
+			font-weight: 600;
+			font-size: 20px;
+		}
+		.navbar a {
+			color: white;
+			text-decoration: none;
+			margin-left: 20px;
+			font-size: 15px;
+			padding: 8px 16px;
+			border-radius: 6px;
+			transition: background-color 0.3s;
+		}
+		.navbar a:hover {
+			background-color: #1f2937;
+		}
+		.container {
+			max-width: 700px;
+			margin: 80px auto;
+			background: white;
+			padding: 40px;
+			border-radius: 12px;
+			box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+			text-align: center;
+		}
+		h1 {
+			color: #1f2937;
+			font-size: 30px;
+			margin-bottom: 10px;
+		}
+		p {
+			color: #4b5563;
+			font-size: 16px;
+			margin-bottom: 30px;
+		}
+		.buttons {
+			margin-top: 20px;
+		}
+		.buttons a {
+			display: inline-block;
+			margin: 10px;
+			padding: 12px 24px;
+			background-color: #3b82f6;
+			color: white;
+			text-decoration: none;
+			border-radius: 8px;
+			font-size: 16px;
+			transition: background-color 0.3s;
+		}
+		.buttons a:hover {
+			background-color: #2563eb;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar">
+		<div class="logo">MyNotes</div>
+		<div>
+			<a th:href="@{/login}">Login</a>
+			<a th:href="@{/register}">Register</a>
+		</div>
+	</nav>
+
+	<div class="container">
+		<h1 th:text="${title}">Welcome to MyNotes</h1>
+		<p>Organize your thoughts, create personal notes, and manage them securely.</p>
+		
+		<div class="buttons">
+			<a th:href="@{/login}">Login</a>
+			<a th:href="@{/register}">Register</a>
+		</div>
+	</div>
+
+</body>
+</html>
